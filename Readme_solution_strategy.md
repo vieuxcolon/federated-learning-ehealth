@@ -2,7 +2,7 @@
 
 # Federated Learning Solution Methodology
 
-This repository provides a **generalized stepwise methodology for solving Federated Learning (FL) problems**. It is intended as a reference for implementing horizontal, vertical, or hybrid FL pipelines, with optional privacy and fairness considerations.
+This document provides a **generalized stepwise methodology for solving Federated Learning (FL) problems**. It is intended as a reference for implementing horizontal, vertical, or hybrid FL pipelines, with optional privacy and fairness considerations.
 
 ---
 
