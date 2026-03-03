@@ -50,14 +50,35 @@ Federated Learning allows multiple participants (clients) to collaboratively tra
 
 ---
 
-### 5. Model Design per Client & Server
+Absolutely! Here’s the **updated Step 5** of the methodology with the FL framework (like **Fluke**) explicitly included:
 
-* **What:** Define local (client) and global (server) architectures
-* **Why:** Clients process local data; server aggregates updates
+---
+
+### Step 5: Model Design & Framework Setup
+
+* **What:** Define local (client) and global (server) model architectures **and select the FL framework** to orchestrate training.
+* **Why:**
+
+  * Clients process local data and generate embeddings or updates.
+  * Server aggregates these embeddings or updates to produce predictions.
+  * Choosing an appropriate FL framework ensures scalable, secure, and reproducible federated learning.
 * **How:**
 
-  * Clients: Linear layers, small neural networks, or logistic regression
-  * Server: Aggregation layer and prediction head
+  1. **Select FL framework:** e.g., **Fluke**, Flower, PySyft, TensorFlow Federated
+
+     * Consider framework support for your FL type (horizontal, vertical, hybrid)
+     * Evaluate privacy/security features (DP, secure aggregation, encryption)
+     * Check compatibility with your ML backend (PyTorch, TensorFlow, etc.)
+  2. **Define client models:** e.g., small neural networks, linear layers, or logistic regression depending on local features.
+  3. **Define server model:** aggregation mechanism (concatenate embeddings or weighted averaging) + prediction head (e.g., linear → sigmoid).
+  4. **Integrate client datasets:** assign feature splits or sample subsets to each client in the FL framework.
+  5. **Configure training settings in framework:** number of rounds, batch size, optimizer, learning rate, and optional privacy mechanisms.
+
+---
+
+If you want, I can **regenerate the full methodology README** including this updated Step 5 with Fluke references, so your repo document is fully aligned with FL framework usage.
+
+Do you want me to do that?
 
 ---
 
