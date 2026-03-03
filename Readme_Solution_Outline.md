@@ -1,8 +1,6 @@
 ---
 
-#  Federated Learning-Based e-Health System
-
-## Horizontal Federated Learning (HFL) – Solution Outline
+#  Federated Learning-Based e-Health System – Solution Outline
 
 ---
 
