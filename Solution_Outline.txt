@@ -1,0 +1,183 @@
+Federated Learning-Based e-Health System (Horizontal FL)
+
+1. Problem Description
+Modern healthcare institutions generate sensitive patient data that cannot be centralized due to:
+•	Privacy regulations (e.g., HIPAA-like constraints)
+•	Ethical restrictions
+•	Data ownership policies
+•	Security risks
+The challenge is to build a privacy-preserving distributed medical prediction system that:
+1.	Enables multiple hospitals to collaboratively train a machine learning model
+2.	Protects sensitive patient attributes (age, gender)
+3.	Handles heterogeneous data distributions (IID and Non-IID)
+4.	Integrates differential privacy mechanisms
+5.	Evaluates model performance, fairness, privacy impact, and communication cost
+We use:
+Dataset:
+Heart Disease UCI
+•	Task: Binary classification (heart disease prediction)
+•	Sensitive attributes: Age, Gender
+Framework: Fluke (Federated Learning simulation framework)
+
+2. System Design Overview
+Architecture
+Component	Quantity
+Central Server	1
+Clients	4
+Hospitals	3
+Mapping example:
+•	Hospital A → Client 1
+•	Hospital B → Client 2
+•	Hospital C → Clients 3 & 4
+Type of FL: Horizontal Federated Learning (HFL)
+•	Same feature space
+•	Different patient records across hospitals
+Aggregation Algorithm: FedAvg
+
+3. Solution Outline – Step-by-Step
+
+STEP 1 — Data Preparation
+1.	Load Heart Disease dataset
+2.	Clean missing values
+3.	Normalize numeric features
+4.	Encode categorical variables
+5.	Define global test set at server
+
+STEP 2 — Simulate Federated Data Distribution
+Case A: IID Distribution
+•	Randomly split dataset into 4 equal partitions
+•	Similar label and age distribution across clients
+Case B: Non-IID Distribution
+Simulate real-world hospital heterogeneity:
+•	Age-based skew (young vs elderly patients)
+OR
+•	Label skew (one hospital has more positive cases)
+This allows studying convergence and fairness impact.
+
+STEP 3 — Model Definition
+All clients use the same neural network architecture:
+•	Input layer
+•	Hidden layer (ReLU)
+•	Output layer (Sigmoid)
+•	Binary cross-entropy loss
+
+STEP 4 — Federated Training Workflow
+For each FL round:
+1.	Server broadcasts global model
+2.	Each client:
+o	Trains locally for E epochs
+o	Computes local loss
+o	Applies privacy mechanism (if enabled)
+o	Sends updated weights to server
+3.	Server aggregates using FedAvg
+4.	Server evaluates on global test set
+Repeat for multiple rounds.
+
+STEP 5 — Privacy Configuration Layer
+The system supports two privacy modes:
+
+Mode 1: No Differential Privacy (Baseline)
+•	Raw model updates shared
+•	No gradient clipping
+•	No noise added
+Purpose:
+•	Provides upper-bound accuracy
+•	Baseline for privacy-utility comparison
+
+Mode 2: Local Differential Privacy (LDP)
+Applied at client side before sending updates:
+1.	Gradient clipping
+2.	Add Gaussian noise to model parameters
+Noise levels (α):
+α	Privacy Level
+0.01	Low
+0.1	Medium
+0.5	High
+Higher α → More privacy → More deviation → Lower accuracy
+
+STEP 6 — Experimental Scenarios
+Experiments are conducted under:
+Data Type	Privacy Mode
+IID	No DP
+IID	DP (α=0.01, 0.1, 0.5)
+Non-IID	No DP
+Non-IID	DP (α=0.01, 0.1, 0.5)
+This enables complete privacy–utility–fairness analysis.
+
+STEP 7 — Metrics Collection
+Metrics are measured at:
+ Server Side
+•	Global Accuracy
+•	Loss
+•	AUC
+•	Convergence speed
+•	Fairness metrics
+Client Side (for each of 4 clients)
+•	Local accuracy
+•	Local loss
+•	Model divergence
+•	Communication cost
+
+STEP 8 — Fairness Evaluation
+Since dataset contains Age and Gender:
+Evaluate:
+•	Demographic Parity difference
+•	Equal Opportunity difference
+•	Group-based accuracy
+Compare:
+•	IID vs Non-IID
+•	No DP vs DP
+
+STEP 9 — Communication & Cost Analysis
+Measure:
+•	Model size (bytes)
+•	Number of FL rounds
+•	Total communication overhead:
+[
+Cost = R \times C \times ModelSize
+]
+Where:
+•	R = FL rounds
+•	C = 4 clients
+
+STEP 10 — Visualization
+For both IID and Non-IID:
+Accuracy vs FL Rounds
+Plots required:
+•	Server accuracy
+•	Client 1 accuracy
+•	Client 2 accuracy
+•	Client 3 accuracy
+•	Client 4 accuracy
+For:
+•	No DP
+•	DP (α values)
+This results in comprehensive comparison graphs.
+
+4. Expected Observations
+IID Data
+•	Faster convergence
+•	Higher accuracy
+•	Lower fairness disparity
+Non-IID Data
+•	Slower convergence
+•	Performance instability
+•	Higher group disparity
+With Differential Privacy
+•	Accuracy decreases as α increases
+•	Convergence slows
+•	Sometimes fairness improves due to noise regularization
+
+5. Key Contributions of the System
+Privacy-preserving collaborative medical learning
+Comparison between baseline and DP-enabled FL
+Analysis under IID and Non-IID settings
+Fairness evaluation for sensitive attributes
+Communication cost measurement
+Practical healthcare FL simulation using Fluke
+6. Conclusion
+This project demonstrates how Horizontal Federated Learning can enable multiple hospitals to collaboratively train a heart disease prediction model while:
+•	Preserving patient privacy
+•	Handling heterogeneous data distributions
+•	Evaluating fairness impact
+•	Quantifying privacy–utility trade-offs
