@@ -134,6 +134,3 @@ This methodology can be applied to:
 * **Vertical FL**: e.g., multi-institution feature-sharing scenario
 * **Hybrid FL**: mixed scenarios
 * **Privacy-Aware FL**: with gradient DP or secure aggregation
-
-
-Do you want me to do that?
