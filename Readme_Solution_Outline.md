@@ -1,9 +1,3 @@
-Here is your regenerated report formatted as a **GitHub README file**.
-
----
-
-# README_Solution_Outline.md
-
 ---
 
 #  Federated Learning-Based e-Health System
