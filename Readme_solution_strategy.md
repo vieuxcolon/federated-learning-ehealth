@@ -2,8 +2,6 @@
 
 # Generalized Federated Learning Solution Methodology
 
-### Step 1: Problem Definition
-
 **What:** Define the FL task, including prediction target and objectives.
 **Why:** Clarifies goals, scope, and evaluation metrics.
 **How:** Identify whether it’s classification, regression, or another ML task; determine utility, privacy, and fairness considerations.
