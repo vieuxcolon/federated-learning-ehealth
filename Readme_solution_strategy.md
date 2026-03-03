@@ -126,7 +126,7 @@ Federated Learning allows multiple participants (clients) to collaboratively tra
 
 ---
 
-## Repository Use
+## Use-Cases
 
 This methodology can be applied to:
 
