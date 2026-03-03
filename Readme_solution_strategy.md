@@ -50,10 +50,6 @@ Federated Learning allows multiple participants (clients) to collaboratively tra
 
 ---
 
-Absolutely! Here’s the **updated Step 5** of the methodology with the FL framework (like **Fluke**) explicitly included:
-
----
-
 ### Step 5: Model Design & Framework Setup
 
 * **What:** Define local (client) and global (server) model architectures **and select the FL framework** to orchestrate training.
@@ -73,12 +69,6 @@ Absolutely! Here’s the **updated Step 5** of the methodology with the FL frame
   3. **Define server model:** aggregation mechanism (concatenate embeddings or weighted averaging) + prediction head (e.g., linear → sigmoid).
   4. **Integrate client datasets:** assign feature splits or sample subsets to each client in the FL framework.
   5. **Configure training settings in framework:** number of rounds, batch size, optimizer, learning rate, and optional privacy mechanisms.
-
----
-
-If you want, I can **regenerate the full methodology README** including this updated Step 5 with Fluke references, so your repo document is fully aligned with FL framework usage.
-
-Do you want me to do that?
 
 ---
 
