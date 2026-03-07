@@ -1,5 +1,3 @@
-Below is a **single consolidated analysis of the full pipeline results (Chunk 1 + Chunk 2)**, written in a **research-style summary suitable for a README or experiment report**.
-
 ---
 
 # Federated Learning Experiment Results — Full Analysis
