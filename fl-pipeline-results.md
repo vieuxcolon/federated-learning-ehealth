@@ -1,5 +1,3 @@
----
-
 # Federated Learning Experiment Results — Full Analysis
 
 This document summarizes the results of **36 experiments** comparing **centralized learning** and **federated learning** across two datasets and multiple hyperparameter configurations.
