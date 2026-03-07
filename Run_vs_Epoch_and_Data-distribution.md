@@ -1,6 +1,4 @@
-# Run_vs_Epoch_and_data-distribution
-
-## Understanding Runs vs Epochs and Data Distribution in Federated Learning
+# Understanding Runs vs Epochs and Data Distribution in Federated Learning
 
 In traditional **centralized machine learning**, training terminology differs from **federated learning (FL)**. This document clarifies key concepts and explains how data is distributed across clients for experiments.
 
