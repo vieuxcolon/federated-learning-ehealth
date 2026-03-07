@@ -293,6 +293,6 @@ Because centralized Adult runs worked correctly, the issue likely lies in **fede
 
 ---
 
-# 9. Next Step: Try to fix federated Learning for the adult dataset
+# 9. Next Step: Fix federated Learning for the adult dataset
 
 ``
