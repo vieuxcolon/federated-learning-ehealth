@@ -7,24 +7,7 @@ This repository demonstrates **Horizontal Federated Learning (HFL)** on a medica
 ---
 
 ## 1. Horizontal Federated Learning Logical Flow
-
-```mermaid
-flowchart TD
-    A[Load Processed Dataset] --> B[Split Data Across Clients]
-    B --> C[Initialize Global Model]
-    C --> D[For Each Global Round]
-    D --> E[Send Global Model to Clients]
-    E --> F[Clients Train Local Model on Local Data]
-    F --> G[Clients Send Updated Model Parameters]
-    G --> H[Server Aggregates Models (FedAvg)]
-    H --> I[Update Global Model]
-    I --> D
-    I --> J[Evaluate Global Model on Test Set]
-    J --> K[Compute Performance Metrics (Accuracy, F1, Precision, Recall)]
-    J --> L[Compute Fairness Metrics (SPD, EOD)]
-    K --> M[Generate Multi-panel Plots]
-    L --> M
-```
+![ Horizontal Federated Learning Logical Flow ](hfl-diagram.png)
 
 > The diagram above shows the HFL pipeline workflow: client-local training, federated averaging, evaluation, and visualization.
 
