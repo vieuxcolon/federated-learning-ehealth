@@ -192,4 +192,3 @@ This repository implements a **horizontal federated learning (HFL)** pipeline us
                 │ Fairness Metrics     │
                 │ Client-level Metrics │
                 └──────────────────────┘
-Do you want me to add that diagram?
