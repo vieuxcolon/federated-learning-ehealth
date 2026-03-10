@@ -1,10 +1,11 @@
 ---
 
-# Vertical Federated Learning (VFL) with FLuKE
+# Vertical Federated Learning (VFL) with FLuKE - Experiment Setup
 
-This repository implements a **Vertical Federated Learning (VFL) pipeline** using a Kaggle healthcare dataset. The pipeline leverages the **FLuKE framework** for federated experiments, including client-server models, training, evaluation, and fairness analysis.
+This project implements a **Vertical Federated Learning (VFL) pipeline** using a Kaggle healthcare dataset. The pipeline leverages the **FLuKE framework** for federated experiments, including client-server models, training, evaluation, and fairness analysis. In this file we present dataset raw & preprocessed info, preprocessing steps, pipeline structure, experiments, and evaluation metrics**.
 
 ---
+
 
 ## Table of Contents
 
@@ -179,8 +180,3 @@ pip install torch pandas scikit-learn matplotlib kagglehub
 
 * Global accuracy, client-level accuracy, sample sizes, fairness metrics
 
----
-
-This README now **covers dataset raw & preprocessed info, preprocessing steps, pipeline structure, experiments, and evaluation metrics**.
-
----
