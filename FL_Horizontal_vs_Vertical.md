@@ -258,15 +258,16 @@ All institutions share the same patients.
 
 ---
 
-# Relation to This Project
+# Relation to the fl-ehealth Project
 
-This repository focuses on experiments using:
+The fl-ehealth Project focuses on experiments using:
 
 ```
-fluke vertical
+1. fluke federated config/exp.yaml config/alg.yaml -> for Horizontal Federated Learning (HFL)
+2. fluke vertical config/exp.yaml config/alg.yaml -> for Vertical Federated Learning (VFL)
 ```
-
-to simulate **multiple hospitals collaboratively training a model where each hospital holds different subsets of medical features**.
+1. to simulate **multiple hospitals collaboratively training a model where each hospital has different patients but holds the same set of medical features**.
+2. to simulate **multiple hospitals collaboratively training a model where each hospital share the same patients but holds different subsets of medical features**.
 
 The pipeline tracks the following metrics:
 
